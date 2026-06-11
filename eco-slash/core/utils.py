@@ -1,5 +1,5 @@
-import core.pysqlite3.pysqlite3 as sqlite3
-import core.aiosqlite.aiosqlite as aiosqlite
+from .pysqlite3 import pysqlite3 as sqlite3
+from .aiosqlite import aiosqlite as aiosqlite
 from collections import OrderedDict
 
 
