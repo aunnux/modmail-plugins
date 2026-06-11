@@ -5,9 +5,8 @@ import random
 USER_COOLDOWNS = {}
 from discord import app_commands
 from discord.ext import commands
-import core.utils as sqlite
-from core.utils import setSetting,getSetting,deleteSetting
-from core.DiscordEconomy.DiscordEconomy.Sqlite import Economy
+from .core.utils import Database,setSetting,getSetting,deleteSetting
+from .core.DiscordEconomy.DiscordEconomy.Sqlite import Economy
 economy = Economy("plugins/aunnux/modmail-plugins/slash-eco/db/economy.db")
 items_list = {
     "Items": {
@@ -47,7 +46,7 @@ class Eco(commands.Cog):
     def __init__(self, client):
         self.bot = client
         self.client = client
-        self.db = sqlite.Database()
+        self.db = Database()
         self.dropped = {}
 
         @self.bot.tree.error
