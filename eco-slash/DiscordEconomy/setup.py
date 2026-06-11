@@ -1,0 +1,29 @@
+from setuptools import find_packages, setup
+from os import path
+
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
+
+setup(
+    name="DiscordEconomy",
+    version="2.0.0",
+    description="Easy-to-use economy extension for Discord bots with support for discord.py, hikari, "
+                "pycord, nextcord - powered by SQLite or MongoDB.",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/Nohet/DiscordEconomy",
+    author="Nohet",
+    author_email="igorczupryniak503@gmail.com",
+    license="MIT",
+    classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+    ],
+    keywords="discord, discord bot, discord.py, pycord, nextcord, hikari, discord extension, discord economy, bot economy, currency system, virtual currency, in-game economy, economy bot, sqlite, mongodb, discord money, discord coins, discord shop, discord inventory, discord minigames",
+    packages=find_packages(),
+    install_requires=["aiosqlite", "aiohttp", "motor", "dnspython", "nest-asyncio", "aiosqlitepool"],
+)
