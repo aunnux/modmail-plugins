@@ -1,0 +1,3 @@
+aiosqlite
+pysqlite3
+DiscordEconomy==2.0.0
