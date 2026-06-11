@@ -6,10 +6,10 @@ USER_COOLDOWNS = {}
 from discord import app_commands
 from discord.ext import commands
 import core.utils
-import core
+import os
 from .core.utils import Database,setSetting,getSetting,deleteSetting
-from DiscordEconomy.Sqlite import Economy
-economy = Economy("plugins/aunnux/modmail-plugins/eco-slash-master/db/economy.db")
+from DiscordEconomy.MongoDB import Economy
+economy = Economy(mongo_url=os.getenv("CONNECTION_URI"),database_name="economy")
 items_list = {
     "Items": {
         "ring": {
