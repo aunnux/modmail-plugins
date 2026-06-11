@@ -1,6 +1,8 @@
 import asyncio
 import typing
 import aiosqlite
+import nest_asyncio
+nest_asyncio.apply()
 
 from aiosqlitepool import SQLiteConnectionPool
 
