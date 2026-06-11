@@ -154,14 +154,14 @@ class Table(metaclass=TableMeta):
 
   
 async def deleteSetting(user_id):
-    async with aiosqlite.connect("plugins/aunnux/modmail-plugins/slash-eco/db/economy.db") as db:
+    async with aiosqlite.connect("plugins/aunnux/modmail-plugins/eco-slash-master/db/economy.db") as db:
         await db.execute("""
                         DELETE FROM settings WHERE channel_id = ?
                     """, (user_id,))
         await db.commit()
 
 async def setSetting(channel_id, drops):
-    async with aiosqlite.connect("plugins/aunnux/modmail-plugins/slash-eco/db/economy.db") as db:
+    async with aiosqlite.connect("plugins/aunnux/modmail-plugins/eco-slash-master/db/economy.db") as db:
         await db.execute("""
                         INSERT INTO settings (channel_id, drops) 
                         VALUES (?, ?) 
@@ -171,7 +171,7 @@ async def setSetting(channel_id, drops):
         await db.commit()
 
 async def getSetting(user_id, drops):
-    async with aiosqlite.connect(f"plugins/aunnux/modmail-plugins/slash-eco/db/economy.db") as db:
+    async with aiosqlite.connect(f"plugins/aunnux/modmail-plugins/eco-slash-master/db/economy.db") as db:
          async with await db.execute("""
                         SELECT * FROM settings WHERE channel_id = ?
                     """, (user_id,)) as cursor:

@@ -9,7 +9,7 @@ import core.utils
 import core
 from .core.utils import Database,setSetting,getSetting,deleteSetting
 from DiscordEconomy.Sqlite import Economy
-economy = Economy("plugins/aunnux/modmail-plugins/slash-eco/db/economy.db")
+economy = Economy("plugins/aunnux/modmail-plugins/eco-slash-master/db/economy.db")
 items_list = {
     "Items": {
         "ring": {
