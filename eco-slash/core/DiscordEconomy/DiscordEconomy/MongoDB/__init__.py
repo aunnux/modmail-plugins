@@ -13,6 +13,10 @@ from ..__version__ import check_for_updates
 from motor import motor_asyncio
 
 __all__ = ["Economy"]
+import nest_asyncio
+
+# 👇️ call apply()
+nest_asyncio.apply()
 
 
 class Economy:
