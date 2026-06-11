@@ -1,0 +1,6 @@
+aiosqlite
+aiohttp
+motor
+dnspython
+nest-asyncio
+aiosqlitepool

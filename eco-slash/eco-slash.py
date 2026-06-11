@@ -5,8 +5,9 @@ import random
 USER_COOLDOWNS = {}
 from discord import app_commands
 from discord.ext import commands
-from utils import sqlite,default
-from DiscordEconomy.Sqlite import Economy
+import core.utils as sqlite
+from core.utils import setSetting,getSetting,deleteSetting
+from core.DiscordEconomy.DiscordEconomy.Sqlite import Economy
 economy = Economy("plugins/aunnux/modmail-plugins/slash-eco/db/economy.db")
 items_list = {
     "Items": {
@@ -173,7 +174,7 @@ class Eco(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, msg: discord.Message):
         let = random.randint(1,100)
-        drops  = await default.getSetting(msg.channel.id, "drops") or None
+        drops  = await getSetting(msg.channel.id, "drops") or None
         if drops != None: drops = drops[0][1]
         if drops == None: drops = False
         if drops == True:
@@ -231,16 +232,16 @@ class Eco(commands.Cog):
     @is_owner()
     async def szea(self,ctx: discord.Interaction):
         """  DEVLEOPER ONLY  """
-        drops  = await default.getSetting(ctx.channel.id, "drops") or None
+        drops  = await getSetting(ctx.channel.id, "drops") or None
         if drops != None: drops = drops[0][1]
         if drops == None: drops = False
         if drops == False:
-            await default.setSetting(ctx.channel.id, True)
+            await setSetting(ctx.channel.id, True)
             await ctx.channel.send("Currency Dropped! use </eco claim:1505228262366908439>")
             self.dropped[ctx.channel.id] = True
             await ctx.response.send_message(":+1:", ephemeral=True)
         else:
-            await default.deleteSetting(ctx.channel_id)
+            await deleteSetting(ctx.channel_id)
             await ctx.response.send_message(":+1:", ephemeral=True)
 
     @d.command(name="add_bank")
