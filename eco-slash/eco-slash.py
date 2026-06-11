@@ -8,7 +8,7 @@ from discord.ext import commands
 import core.utils
 import core
 from .core.utils import Database,setSetting,getSetting,deleteSetting
-from .core.DiscordEconomy.DiscordEconomy.Sqlite import Economy
+from DiscordEconomy.Sqlite import Economy
 economy = Economy("plugins/aunnux/modmail-plugins/slash-eco/db/economy.db")
 items_list = {
     "Items": {
