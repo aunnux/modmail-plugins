@@ -13,6 +13,9 @@ from unittest.mock import patch
 
 import aiosqlite
 from .helpers import setup_logger
+import nest_asyncio
+nest_asyncio.apply()
+
 
 
 class SmokeTest(IsolatedAsyncioTestCase):

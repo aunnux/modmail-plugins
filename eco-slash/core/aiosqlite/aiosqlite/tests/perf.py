@@ -12,6 +12,9 @@ import time
 from unittest import IsolatedAsyncioTestCase as TestCase
 
 import aiosqlite
+import nest_asyncio
+nest_asyncio.apply()
+
 from .smoke import setup_logger
 
 TEST_DB = ":memory:"
