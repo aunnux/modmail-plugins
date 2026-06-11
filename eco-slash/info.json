@@ -1,0 +1,11 @@
+{
+    "name": "eco-slash",
+    "description": [
+        "An Economy Plugin.",
+        "\n**Version:**\n`{0}`"
+    ],
+    "author": "Aunnux",
+    "version": "0.0.1",
+    "bot_version": "4.0.0",
+    "dpy_version": "2.0.0"
+}
