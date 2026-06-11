@@ -554,5 +554,5 @@ class Eco(commands.Cog):
         user = await economy.get_user(ctx.user.id)
         await ctx.response.send_message(f"{ctx.user.name} has (:dollar: ${user.wallet}  | :bank: ${user.bank})")
 
-async def setup(client):
+async def setup(client) -> None:
     await client.add_cog(Eco(client))
